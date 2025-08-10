@@ -1,0 +1,44 @@
+@use "/src/palette.scss" as *;
+
+body {
+  margin: 0;
+  background-color: $nav-color;
+  color: $main-text-color;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: $main-text-color;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+hr {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

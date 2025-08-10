@@ -1,0 +1,46 @@
+.centering {
+  padding: 100px 0 40px;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("@/background.jpg") repeat-x;
+  background-size: auto 100%;
+}
+
+.helloFrame {
+  position: relative;
+  grid-column: 4 / 10;
+  min-height: 366px;
+
+  padding: 44px 33px 52px;
+  border: 5px solid white;
+  border-radius: 57px;
+
+  background-color: black;
+
+  text-align: center;
+
+  img {
+    height: 115px;
+    position: absolute;
+    left: calc(50% - 115px / 2);
+    top: -76px;
+
+    border: 5px solid white;
+    border-radius: 20px;
+  }
+
+  h1 {
+    font-size: 64px;
+  }
+
+  p {
+    margin: 10px 0 20px;
+    font-size: 24px;
+  }
+
+  b {
+    font-weight: 800;
+    font-stretch: condensed;
+    font-size: 32px;
+  }
+}

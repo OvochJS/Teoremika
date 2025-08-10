@@ -1,0 +1,74 @@
+@use "/src/palette.scss" as *;
+
+.board {
+  background-color: $two-main-color;
+
+  .title {
+    hr {
+      height: 10px;
+      background: url(@/titleAfter.png) center/contain no-repeat;
+    }
+  }
+  p + hr {
+    height: 10px;
+    background: url(@/pAfter.png) center/contain no-repeat;
+  }
+}
+
+.classic {
+  background-color: $one-main-color;
+
+  .title {
+    hr {
+      height: 3px;
+      background-color: white;
+    }
+  }
+  p + hr {
+    height: 1px;
+    border: 2px solid white;
+  }
+}
+
+.centering {
+  padding: 57px 0 100px;
+}
+
+.grid {
+  align-items: center;
+}
+
+.presentationImg {
+  grid-column: span 3;
+  width: 100%;
+  height: auto;
+}
+
+.presentationText {
+  grid-column: span 6;
+  text-align: center;
+
+  hr {
+    border: none;
+  }
+
+  p {
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  p + hr {
+    margin: 20px 0;
+  }
+}
+
+.title {
+  display: inline-block;
+  margin-bottom: 37px;
+
+  h2 {
+    margin: 0 50px;
+    font-size: 64px;
+    font-weight: 800;
+  }
+}
