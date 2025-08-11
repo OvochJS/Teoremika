@@ -10,7 +10,7 @@ import style from "./Footer.module.scss";
 export function Footer() {
   return (
     <div className="centering">
-      <div className={style.footer}>
+      <div className={"content " + style.footer}>
         <div className={style.topBar}>
           <nav className={style.navbar}>
             <Link to="/">Главная</Link>
@@ -37,7 +37,7 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="https://github.com/OvochJS">
                 <img src={github} />
               </a>
             </li>

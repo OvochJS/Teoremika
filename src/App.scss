@@ -24,3 +24,10 @@
 .active {
   text-decoration: underline;
 }
+
+@media (max-width: 1500px) {
+  .content {
+    width: 1366px;
+    padding: 0 50px;
+  }
+}

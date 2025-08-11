@@ -16,20 +16,14 @@
 .classic {
   background-color: var(--color-bg-2);
 
-  .title {
-    hr {
-      height: 3px;
-      background-color: var(--color-text);
-    }
-  }
-  p + hr {
-    height: 1px;
-    border: 2px solid var(--color-text);
+  hr {
+    height: 3px;
+    background-color: var(--color-text);
   }
 }
 
 .paddings {
-  padding: 57px 0 100px;;
+  padding: 50px 0 100px;
 }
 
 .centeringItem {
@@ -47,7 +41,7 @@
   text-align: center;
 
   p {
-    font-size: clamp(16px, 2vw, 36px);
+    font-size: clamp(18px, 2vw, 36px);
   }
 
   p + hr {
@@ -63,5 +57,43 @@
     margin: 0 50px;
     font-size: 64px;
     font-weight: 800;
+  }
+}
+
+@media (max-width: 1500px) {
+  .classic {
+    hr {
+      height: 1px;
+      background-color: var(--color-text);
+    }
+  }
+
+  .paddings {
+    padding: 25px 0 35px;
+  }
+
+  .presentationImg {
+    padding: 10%;
+  }
+
+  .presentationText {
+    padding: 0 10%;
+
+    p {
+      font-size: clamp(8px, 1.5vw, 18px);
+    }
+
+    p + hr {
+      margin: 5px 0;
+    }
+  }
+
+  .title {
+    margin-bottom: 15px;
+
+    h2 {
+      margin: 0 20px;
+      font-size: clamp(20px, 3vw, 32px);
+    }
   }
 }
