@@ -50,7 +50,7 @@
 
   .footer {
     padding-top: 25px;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
   }
 
   .topBar {
@@ -59,12 +59,44 @@
 
   .networks {
     gap: 10px;
-     img {
+    img {
       height: 26px;
-     }
+    }
   }
 
   .bottomBar {
     padding-top: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    gap: 15px;
+
+    font-size: 10px;
+  }
+
+  .me {
+    font-size: 8px;
+  }
+
+  .footer {
+    padding-top: 29px;
+    padding-bottom: 40px;
+  }
+
+  .topBar {
+    padding-bottom: 5px;
+  }
+
+  .networks {
+    gap: 5px;
+    img {
+      height: 15px;
+    }
+  }
+
+  .bottomBar {
+    padding-top: 5px;
   }
 }

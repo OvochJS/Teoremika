@@ -26,3 +26,13 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+  .logo {
+    font-size: 16px;
+    img {
+      width: 31px;
+      height: 26px;
+    }
+  }
+}

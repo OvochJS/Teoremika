@@ -82,3 +82,40 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+    .bg {
+    padding: 35px 0 15px;
+  }
+
+  .helloFrame {
+    grid-column-start: 4;
+    width: 350px;
+    padding: 10px;
+
+    border: 1px solid var(--color-text);
+    border-radius: 15px;
+
+    img {
+      height: 40px;
+      left: calc(50% - 40px / 2);
+      top: -30px;
+
+      border: 1px solid var(--color-text);
+      border-radius: 4px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+
+    p {
+      margin: 5px 0 10px;
+      font-size: 12px;
+    }
+
+    b {
+      font-size: 16px;
+    }
+  }
+}

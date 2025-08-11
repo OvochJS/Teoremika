@@ -101,3 +101,31 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+  .navbar {
+    gap: 10px;
+
+    font-size: 12px;
+
+    button,
+    input {
+      font-size: 12px;
+    }
+
+    button {
+      padding: 3px 13px;
+    }
+  }
+
+  .searchInput {
+    &::after {
+      width: 12px;
+      height: 12px;
+    }
+
+    input {
+      height: 18px;
+    }
+  }
+}
