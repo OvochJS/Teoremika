@@ -3,9 +3,15 @@
   align-items: center;
 
   font-size: 36px;
+
   img {
     width: 65px;
     height: 55px;
     object-fit: cover;
+  }
+
+  span {
+    font-stretch: condensed;
+    font-weight: 900;
   }
 }

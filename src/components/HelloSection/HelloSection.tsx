@@ -1,10 +1,10 @@
-import logo from "@/logoTM.jpg";
+import logo from "@/logoTM-white.png";
 import style from "./HelloSection.module.scss";
 
 export function HelloSection() {
   return (
-    <div className={"centering " + style.centering}>
-      <div className="grid-layout ">
+    <div className={"centering " + style.bg}>
+      <div className="content grid-layout">
         <div className={style.helloFrame}>
           <img src={logo} />
           <h1 className="title">TEOREMIKA</h1>

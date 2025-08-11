@@ -1,4 +1,4 @@
-.centering {
+.bg {
   padding: 100px 0 40px;
 
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -9,24 +9,26 @@
 .helloFrame {
   position: relative;
   grid-column: 4 / 10;
-  min-height: 366px;
 
   padding: 44px 33px 52px;
-  border: 5px solid white;
+  border: 5px solid var(--color-text);
   border-radius: 57px;
 
-  background-color: black;
+  background-color: var(--color-main);
 
   text-align: center;
 
+  // logo
   img {
     height: 115px;
     position: absolute;
     left: calc(50% - 115px / 2);
-    top: -76px;
+    top: -75px;
 
-    border: 5px solid white;
+    border: 5px solid var(--color-text);
     border-radius: 20px;
+
+    background-color: var(--color-main);
   }
 
   h1 {

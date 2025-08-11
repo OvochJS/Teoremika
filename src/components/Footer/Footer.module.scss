@@ -1,5 +1,3 @@
-@use "/src/palette.scss" as *;
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -13,7 +11,7 @@
 .me {
   font-size: 16px;
   font-weight: 700;
-  color: $two-help-text-color;
+  color: var(--color-text-secondary-2);
 }
 
 .footer {
@@ -25,7 +23,7 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 25px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--color-text);
 }
 
 .networks {

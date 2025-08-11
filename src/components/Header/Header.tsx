@@ -5,8 +5,8 @@ import style from "./Header.module.scss";
 
 export function Header() {
   return (
-    <div className={"centering " + style.centering}>
-      <div className={style.header}>
+    <div className="centering header">
+      <div className={style.header + " content"}>
         <Logo />
 
         <nav className={style.navbar}>

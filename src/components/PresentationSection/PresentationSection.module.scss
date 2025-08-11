@@ -1,7 +1,5 @@
-@use "/src/palette.scss" as *;
-
 .board {
-  background-color: $two-main-color;
+  background-color: var(--color-bg-1);
 
   .title {
     hr {
@@ -16,25 +14,25 @@
 }
 
 .classic {
-  background-color: $one-main-color;
+  background-color: var(--color-bg-2);
 
   .title {
     hr {
       height: 3px;
-      background-color: white;
+      background-color: var(--color-text);
     }
   }
   p + hr {
     height: 1px;
-    border: 2px solid white;
+    border: 2px solid var(--color-text);
   }
 }
 
-.centering {
-  padding: 57px 0 100px;
+.paddings {
+  padding: 57px 0 100px;;
 }
 
-.grid {
+.centeringItem {
   align-items: center;
 }
 
@@ -48,13 +46,8 @@
   grid-column: span 6;
   text-align: center;
 
-  hr {
-    border: none;
-  }
-
   p {
-    font-size: 36px;
-    line-height: 45px;
+    font-size: clamp(16px, 2vw, 36px);
   }
 
   p + hr {
