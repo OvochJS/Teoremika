@@ -26,18 +26,19 @@
   padding: 50px 0 100px;
 }
 
-.centeringItem {
+.positionItem {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
 .presentationImg {
-  grid-column: span 3;
   width: 100%;
   height: auto;
+  padding: 0 3%;
 }
 
 .presentationText {
-  grid-column: span 6;
   text-align: center;
 
   p {
@@ -73,14 +74,14 @@
   }
 
   .presentationImg {
-    padding: 10%;
+    max-width: 300px;
   }
 
   .presentationText {
-    padding: 0 10%;
+    max-width: 450px;
 
     p {
-      font-size: clamp(8px, 1.5vmax, 18px);
+      font-size: clamp(14px, 1.5vmax, 18px);
     }
 
     p + hr {
@@ -93,7 +94,22 @@
 
     h2 {
       margin: 0 20px;
-      font-size: clamp(20px, 3vmax, 32px);
+      font-size: clamp(28px, 3vmax, 32px);
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .presentationImg {
+    display: none;
+  }
+
+  .presentationText {
+    grid-column: 1 / 13;
+    padding: 0;
+  }
+
+  .title {
+    margin-bottom: 10px;
   }
 }

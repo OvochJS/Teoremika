@@ -29,7 +29,7 @@ export function PresentationSection({
 
   return (
     <div className={"centering " + style[theme] + " " + style.paddings}>
-      <div className={"content grid-layout " + style.centeringItem}>
+      <div className={"content " + style.positionItem}>
         <img src={sources[0]} className={style.presentationImg} />
         <div className={style.presentationText}>
           <div className={style.title}>
