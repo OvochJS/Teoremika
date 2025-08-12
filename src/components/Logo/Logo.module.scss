@@ -30,9 +30,21 @@
 @media (max-width: 800px) {
   .logo {
     font-size: 16px;
+
     img {
       width: 31px;
       height: 26px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    font-size: 14px;
+
+    img {
+      width: 26px;
+      height: 22px;
     }
   }
 }

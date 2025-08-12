@@ -25,6 +25,15 @@
   text-decoration: underline;
 }
 
+.button-icon {
+  background: none;
+  border: none;
+
+  &:hover {
+    outline: none;
+  }
+}
+
 @media (max-width: 1500px) {
   .content {
     width: 1366px;

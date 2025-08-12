@@ -7,6 +7,15 @@
   padding-bottom: 10px;
 }
 
+.leftBar {
+  display: flex;
+  gap: 5px;
+}
+
+.menuButton {
+  display: none;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -14,57 +23,8 @@
   gap: 35px;
 
   font-size: 24px;
-
-  button,
-  input {
-    border-radius: 10px;
-
-    background-color: var(--color-input);
-
-    font-size: 24px;
-  }
-
-  button {
-    padding: 6px 38px;
-
-    color: var(--color-main);
-
-    &:hover {
-      cursor: pointer;
-
-      outline: solid 3px var(--color-text-secondary-1);
-    }
-  }
 }
 
-.searchInput {
-  position: relative;
-
-  &::after {
-    content: "";
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    top: 4px;
-    right: 15px;
-
-    background-image: url(@/search.svg);
-    background-size: cover;
-  }
-
-  input {
-    width: 346px;
-    height: 40px;
-    padding-left: 15px;
-    padding-right: 50px;
-
-    color: var(--color-input-text);
-
-    &:focus {
-      outline: solid 3px var(--color-text-secondary-1);
-    }
-  }
-}
 
 @media (max-width: 1500px) {
   .header {
@@ -76,56 +36,28 @@
     gap: 20px;
 
     font-size: 16px;
-
-    button,
-    input {
-      font-size: 16px;
-      border-radius: 5px;
-    }
-
-    button {
-      padding: 4px 18px;
-    }
-  }
-
-  .searchInput {
-    &::after {
-      width: 16px;
-      height: 16px;
-      right: 5px;
-    }
-
-    input {
-      width: 168px;
-      height: 25px;
-    }
   }
 }
+
 
 @media (max-width: 800px) {
   .navbar {
     gap: 10px;
-
     font-size: 12px;
+  }
+}
 
-    button,
-    input {
-      font-size: 12px;
-    }
 
-    button {
-      padding: 3px 13px;
-    }
+@media (max-width: 600px) {
+  .menuButton {
+    display: block;
   }
 
-  .searchInput {
-    &::after {
-      width: 12px;
-      height: 12px;
-    }
+  .navbar {
+    gap: 5px;
 
-    input {
-      height: 18px;
+    a {
+      display: none;
     }
   }
 }

@@ -41,7 +41,7 @@
   text-align: center;
 
   p {
-    font-size: clamp(18px, 2vw, 36px);
+    font-size: clamp(18px, 2vmax, 36px);
   }
 
   p + hr {
@@ -80,7 +80,7 @@
     padding: 0 10%;
 
     p {
-      font-size: clamp(8px, 1.5vw, 18px);
+      font-size: clamp(8px, 1.5vmax, 18px);
     }
 
     p + hr {
@@ -93,7 +93,7 @@
 
     h2 {
       margin: 0 20px;
-      font-size: clamp(20px, 3vw, 32px);
+      font-size: clamp(20px, 3vmax, 32px);
     }
   }
 }

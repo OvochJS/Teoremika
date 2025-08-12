@@ -13,7 +13,7 @@
   --color-categories: #2a2a2a;
 
   --color-input: #e8e8e8;
-  --color-input-text: #79747E;
+  --color-input-text: #79747e;
   color-scheme: dark;
 }
 
@@ -60,6 +60,11 @@ button,
 input {
   border: none;
   font-family: "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
 }
 
 ul {
