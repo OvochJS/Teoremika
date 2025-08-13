@@ -31,8 +31,10 @@
   }
 
   .avatar {
-    height: 37px;
-    width: 37px;
+    img {
+      height: 37px;
+      width: 37px;
+    }
   }
 }
 
@@ -49,8 +51,10 @@
   }
 
   .avatar {
-    height: 26px;
-    width: 26px;
+    img {
+      height: 26px;
+      width: 26px;
+    }
   }
 }
 
@@ -63,7 +67,9 @@
   }
 
   .avatar {
-    height: 22px;
-    width: 22px;
+    img {
+      height: 22px;
+      width: 22px;
+    }
   }
 }
