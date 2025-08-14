@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--color-bg-1);
+}
+
+.leftbar {
+    width: 280px;
+}

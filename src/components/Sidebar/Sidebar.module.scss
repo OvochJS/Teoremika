@@ -4,8 +4,8 @@
 
   width: 440px;
 
-  height: 1400px; //удалить
-
+  min-height: 1400px; //удалить
+  
   border-right: 1px solid var(--color-text);
   background-color: var(--color-bg-2);
 }
