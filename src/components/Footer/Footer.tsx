@@ -2,7 +2,7 @@ import discord from "@/networks/discord.png";
 import telegram from "@/networks/telegram.png";
 import github from "@/networks/github.png";
 
-import { Logo } from "#/Logo/Logo";
+import { Logo } from "#/Logo";
 import { Link } from "react-router";
 
 import style from "./Footer.module.scss";

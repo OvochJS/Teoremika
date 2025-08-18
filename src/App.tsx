@@ -3,8 +3,8 @@ import "./App.scss";
 
 import { Home } from "./pages/Home.tsx";
 import { Documentation } from "./pages/Documentation.tsx";
-import { Header } from "./components/Header/Header.tsx";
-import {Footer} from "#/Footer/Footer.tsx";
+import { Header } from "./components/Header.tsx";
+import { Footer } from "#/Footer/Footer.tsx";
 
 function App() {
   return (
