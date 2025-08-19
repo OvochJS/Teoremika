@@ -3,7 +3,7 @@ import style from "./HelloSection.module.scss";
 
 export function HelloSection() {
   return (
-    <div className={"centering " + style.bg}>
+    <div className={"centering " + style.bg }>
       <div className="content centering">
         <div className={style.helloFrame}>
           <img src={logo} />
