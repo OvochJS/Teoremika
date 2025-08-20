@@ -1,14 +1,12 @@
 import { Sidebar } from "#/Sidebar/Sidebar";
 import { Book } from "#/Book/Book";
 
-import style from "./Documentation.module.scss";
 
 export function Documentation() {
   return (
-    <div className={style.container}>
+    <div className="flex justify-between bg-neutral-950">
       <Sidebar />
-      <Book />
-      <div className={style.leftbar}></div>
+      <Book title="ТЕст" date="3 сентебря" />
     </div>
   );
 }

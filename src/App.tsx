@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router";
-import "./App.scss";
 
 import { Home } from "./pages/Home.tsx";
 import { Documentation } from "./pages/Documentation.tsx";
@@ -10,10 +9,10 @@ function App() {
   return (
     <>
       <Header />
-      {/* <Routes>
+      <Routes>
         <Route index element={<Home />} />
         <Route path="documentation" element={<Documentation />} />
-      </Routes> */}
+      </Routes>
       <Footer />
     </>
   );

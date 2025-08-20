@@ -1,7 +1,7 @@
-import { HelloSection } from "#/HelloSection/HelloSection";
-import { PresentationSection } from "#/PresentationSection/PresentationSection";
+import { HelloSection } from "#/HelloSection";
+import { PresentationSection } from "#/PresentationSection";
 
-import type { PresentationSectionProps } from "#/PresentationSection/PresentationSection";
+import type { PresentationSectionProps } from "#/PresentationSection";
 
 const OnePresentationProps: PresentationSectionProps = {
   theme: "board",

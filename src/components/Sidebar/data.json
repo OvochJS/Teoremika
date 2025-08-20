@@ -5,7 +5,7 @@
       "title": "По классам",
       "next": [
         {
-        "id": 1,
+          "id": 1,
           "title": "test",
           "next": []
         }
@@ -16,11 +16,11 @@
       "title": "По темам",
       "next": [
         {
-            "id": 3,
+          "id": 3,
           "title": "Треугольник",
           "next": [
             {
-                "id": 4,
+              "id": 4,
               "title": "test",
               "next": []
             }
@@ -35,7 +35,7 @@
               "title": "test",
               "next": [
                 {
-                    "id": 7,
+                  "id": 7,
                   "title": "test",
                   "next": []
                 }
@@ -46,7 +46,7 @@
               "title": "test",
               "next": [
                 {
-                    "id": 9,
+                  "id": 9,
                   "title": "test",
                   "next": []
                 }
