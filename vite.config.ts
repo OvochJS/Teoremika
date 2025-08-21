@@ -10,6 +10,7 @@ export default defineConfig({
     alias: {
       "@": "/src/assets",
       "#": "/src/components",
+      "$": "/src/app"
     },
   },
 });

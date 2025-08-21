@@ -22,10 +22,10 @@ export function Sidebar() {
   return (
     <div
       className={
-        "hidden flex-1 px-1 py-2 sm:block sm:max-w-110 sm:min-w-34 sm:border-r sm:bg-neutral-900"
+        "hidden flex-1 bg-[#1a1a1a] px-1 sm:block sm:max-w-80 sm:min-w-34 sm:border-r"
       }
     >
-      <span className="text-[8px] text-neutral-400">Разделы обучения</span>
+      <span className="text-[8px] text-neutral-400 align-bottom">Разделы обучения</span>
       <ul className="py-1" onClick={handleClick}>
         <SectionList sections={data.next} />
       </ul>
@@ -47,7 +47,7 @@ function SectionList({ sections }: { sections: section[] }) {
         </>
       ) : (
         <NavLink to="/">
-          <div className="pr-4 text-[10px] rounded-sm py-1 pl-1 hover:bg-neutral-700">
+          <div className="rounded-sm py-1 pr-4 pl-1 text-[10px] hover:bg-neutral-700">
             {section.title}
           </div>
         </NavLink>
