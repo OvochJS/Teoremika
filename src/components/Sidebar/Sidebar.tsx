@@ -22,10 +22,12 @@ export function Sidebar() {
   return (
     <div
       className={
-        "hidden flex-1 bg-[#1a1a1a] px-1 sm:block sm:max-w-80 sm:min-w-34 sm:border-r"
+        "hidden bg-[#1a1a1a] sm:block sm:w-[20%] sm:border-r sm:px-1 lg:w-[17.5%] lg:px-2 2xl:max-w-80 2xl:min-w-64 2xl:px-3 2xl:py-2"
       }
     >
-      <span className="text-[8px] text-neutral-400 align-bottom">Разделы обучения</span>
+      <span className="align-bottom text-[8px] text-neutral-400 lg:text-[10px] 2xl:text-sm">
+        Разделы обучения:
+      </span>
       <ul className="py-1" onClick={handleClick}>
         <SectionList sections={data.next} />
       </ul>
@@ -38,7 +40,7 @@ function SectionList({ sections }: { sections: section[] }) {
     <li key={section.id}>
       {section.next.length ? (
         <>
-          <div className="relative rounded-sm py-1 pr-4 pl-1 text-[10px] after:absolute after:top-2 after:right-1 after:size-3 after:bg-[url(@/arrow.svg)] after:bg-contain hover:bg-neutral-700">
+          <div className="relative rounded-sm py-1 pr-4 pl-1 text-[10px] after:absolute after:top-2 after:right-1 after:size-3 after:bg-[url(@/arrow.svg)] after:bg-contain hover:bg-neutral-700 lg:text-xs 2xl:text-base 2xl:after:top-3">
             {section.title}
           </div>
           <ul className="hidden pl-2">
@@ -47,7 +49,7 @@ function SectionList({ sections }: { sections: section[] }) {
         </>
       ) : (
         <NavLink to="/">
-          <div className="rounded-sm py-1 pr-4 pl-1 text-[10px] hover:bg-neutral-700">
+          <div className="rounded-sm py-1 pr-4 pl-1 text-[10px] hover:bg-neutral-700 lg:text-xs 2xl:text-base">
             {section.title}
           </div>
         </NavLink>

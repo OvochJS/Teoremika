@@ -4,9 +4,9 @@ import { NavSection } from "#/NavSection/NavSection";
 
 export function Documentation() {
   return (
-    <div className="flex justify-between bg-neutral-900">
+    <div className="flex w-[100%] justify-between bg-neutral-900">
       <Sidebar />
-      <Book title="ТЕст" date="3 сентебря" />
+      <Book title="ТЕст" date="30.02.2000" />
       <NavSection />
     </div>
   );
