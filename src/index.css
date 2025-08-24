@@ -10,12 +10,9 @@
   border: none;
 
   &:hover {
+    cursor: pointer;
     outline: none;
   }
-}
-
-.active {
-  text-decoration: underline;
 }
 
 .markdown {
