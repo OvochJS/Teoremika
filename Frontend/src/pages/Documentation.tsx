@@ -1,4 +1,4 @@
-import { Sidebar } from "#/Sidebar/Sidebar";
+import { Sidebar } from "#/Sidebar";
 import { Book } from "#/Book/Book";
 import { NavSection } from "#/NavSection/NavSection";
 

@@ -1,16 +1,35 @@
-import data from "./data.json";
-
 import { NavLink } from "react-router";
 
-import type { MouseEvent as ReactMouseEvent } from "react";
+import { useEffect, useState, type MouseEvent as ReactMouseEvent } from "react";
 
-interface section {
+interface Section {
   id: number;
   title: string;
-  next: section[];
+  children: Section[];
 }
 
-export function Sidebar({mobileVisible = false}) {
+export function Sidebar({ mobileVisible = false }) {
+  const [data, setData] = useState<Section[]>([]);
+
+  useEffect(() => {
+    let ignore = false;
+
+    fetch("/api/v1/documentation/sections")
+      .then((response) => response.json())
+      .then((json) => {
+        if (!ignore) {
+          setData(json as Section[]);
+        }
+      })
+      .catch((err) => {
+        console.error("Не удалось получить данные", err);
+      });
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
   function handleClick(e: ReactMouseEvent): void {
     if (!(e.target instanceof HTMLElement)) return;
 
@@ -30,22 +49,22 @@ export function Sidebar({mobileVisible = false}) {
         Разделы обучения:
       </span>
       <ul className="py-1" onClick={handleClick}>
-        <SectionList sections={data.next} />
+        <SectionList sections={data} />
       </ul>
     </div>
   );
 }
 
-function SectionList({ sections }: { sections: section[] }) {
+function SectionList({ sections }: { sections: Section[] }) {
   return sections.map((section) => (
     <li key={section.id}>
-      {section.next.length ? (
+      {section.children.length ? (
         <>
           <div className="relative rounded-sm py-1 pr-5 pl-1 text-sm after:absolute after:top-2 after:right-1 after:size-3 after:bg-[url(@/arrow.svg)] after:bg-contain hover:bg-neutral-700 sm:text-[10px] lg:text-xs 2xl:text-base 2xl:after:top-3">
             {section.title}
           </div>
           <ul className="hidden pl-2">
-            <SectionList sections={section.next} />
+            <SectionList sections={section.children} />
           </ul>
         </>
       ) : (
