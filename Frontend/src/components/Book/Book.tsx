@@ -1,25 +1,22 @@
 import MarkdownIt from "markdown-it";
-import Markdown from "./test.md?raw";
 import { useDispatch } from "react-redux";
-import { setChapters } from "#/NavSection/navSectionSlice";
+import { setChapters } from "$/store/reducers/navSectionSlice";
+import { useAppSelector } from "$/hooks";
 
 const md = new MarkdownIt({ html: false });
 
-export function Book({
-  title = "Тестовый Заголовок",
-  date,
-}: {
-  title: string;
-  date: string;
-}) {
+export function Book() {
+  const {date, content: markdown, fileName: title} = useAppSelector((state) => state.Book.value);
   const dispatch = useDispatch();
 
-  const text = md.render(Markdown);
+  const formatedDate = new Date(date);
+
+  const text = md.render(markdown);
   const regexp = /<h([1-6])>(.*?)<\/h\1>/g;
   let i = 0;
   const chapters: string[] = [];
 
-  const document = text.replace(regexp, (full, level, text: string) => {
+  const document = text.replace(regexp, (_, level, text: string) => {
     chapters.push(text);
     return `<h${level} id="chapter-${i++}">${text}</h${level}>`;
   });
@@ -34,7 +31,7 @@ export function Book({
         className="markdown wrap-break-word"
       ></div>
 
-      <div className="my-5 text-right">Дата обновления: {date}</div>
+      <div className="my-5 text-right">Дата обновления: {formatedDate.toISOString()}</div>
     </div>
   );
 }

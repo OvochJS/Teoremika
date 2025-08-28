@@ -27,7 +27,7 @@
     "paths": {
       "#/*": ["src/components/*"],
       "@/*": ["src/assets/*"],
-      "$/*": ["src/app/*"]
+      "$/*": ["src/*"]
     },
   },
   "include": ["src"]

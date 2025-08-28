@@ -1,4 +1,4 @@
-import { useAppSelector } from "$/hooks";
+import { useAppSelector } from "$/hooks.ts";
 
 export function NavSection() {
   const sections = useAppSelector((state) => state.navSection.value);

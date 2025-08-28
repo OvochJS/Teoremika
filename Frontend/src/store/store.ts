@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import navSectionReducer from "#/NavSection/navSectionSlice";
+import navSectionReducer from "$/store/reducers/navSectionSlice";
+import BookReducer from "$/store/reducers/BookSlice"
 
 export const store = configureStore({
   reducer: {
     navSection: navSectionReducer,
+    Book: BookReducer,
   },
 });
 

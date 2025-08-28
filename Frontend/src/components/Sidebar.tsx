@@ -1,6 +1,9 @@
 import { NavLink } from "react-router";
 
 import { useEffect, useState, type MouseEvent as ReactMouseEvent } from "react";
+import { useAppDispatch } from "$/hooks";
+import { fetchMarkdown } from "$/store/reducers/BookSlice";
+
 
 interface Section {
   id: number;
@@ -56,6 +59,8 @@ export function Sidebar({ mobileVisible = false }) {
 }
 
 function SectionList({ sections }: { sections: Section[] }) {
+  const dispatch = useAppDispatch();
+
   return sections.map((section) => (
     <li key={section.id}>
       {section.children.length ? (
@@ -68,7 +73,7 @@ function SectionList({ sections }: { sections: Section[] }) {
           </ul>
         </>
       ) : (
-        <NavLink to="/">
+        <NavLink to={"/documentation/" + section.title} onClick={() => {void dispatch(fetchMarkdown(section.title))}}>
           <div className="rounded-sm py-1 pr-5 pl-1 text-sm hover:bg-neutral-700 sm:text-[10px] lg:text-xs 2xl:text-base">
             {section.title}
           </div>
