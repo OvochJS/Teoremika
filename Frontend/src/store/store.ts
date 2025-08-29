@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import navSectionReducer from "$/store/reducers/navSectionSlice";
-import BookReducer from "$/store/reducers/BookSlice"
+import { apiDocumentation } from "$/services/documentationService";
 
 export const store = configureStore({
   reducer: {
     navSection: navSectionReducer,
-    Book: BookReducer,
+    [apiDocumentation.reducerPath]: apiDocumentation.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiDocumentation.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

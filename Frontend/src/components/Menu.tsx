@@ -28,7 +28,7 @@ export function Menu() {
 
       <div
         className={
-          "absolute left-0 top-10 w-[70%] max-h-[70vh] overflow-auto rounded-br-2xl bg-black px-3 pt-3 pb-5 transition-transform duration-300 ease-in-out" +
+          "absolute left-0 top-10 w-[70%] max-h-[70vh] overflow-auto rounded-br-2xl bg-black px-3 pt-3 pb-5 sm:hidden" +
           (isOpen ? " translate-x-0" : " -translate-x-full")
         }
       >
