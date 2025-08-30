@@ -14,8 +14,12 @@ public class SectionService {
     public SectionService(SectionRepository sectionRepository) {
         this.sectionRepository = sectionRepository;
     }
-    
+
     public List<Section> getThreeSections() {
         return sectionRepository.findAllByParentIsNull();
+    }
+
+    public List<Section> searchSections(String keyword) {
+        return sectionRepository.searchByTitleOrMarkdownContent(keyword);
     }
 }

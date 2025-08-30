@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 import { Logo } from "#/Logo";
 import { Profile } from "#/Profile";
-import { Search } from "#/Search";
+import { Search } from "#/Search/Search";
 
 import { Menu } from "./Menu";
 

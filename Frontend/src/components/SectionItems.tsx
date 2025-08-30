@@ -16,7 +16,7 @@ export function SectionItems({ sections }: { sections: Section[] }) {
       ) : (
         <NavLink
           className="my-1 block rounded-sm py-1 pr-5 pl-1 text-sm hover:bg-neutral-700 sm:text-[10px] lg:text-xs 2xl:text-base [&.active]:bg-neutral-700"
-          to={"/documentation/" + section.title}
+          to={`/documentation/${section.title}/${section.idMarkdownFile}`}
         >
           {section.title}
         </NavLink>

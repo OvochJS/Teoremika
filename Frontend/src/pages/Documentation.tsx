@@ -8,7 +8,7 @@ export function Documentation() {
     <div className="flex w-[100%] justify-between bg-neutral-900 min-h-100">
       <Sidebar />
       <Routes>
-        <Route path="/:title?" element={<Book />} />
+        <Route path="/:title?/:id?" element={<Book />} />
       </Routes>
       <NavSection />
     </div>

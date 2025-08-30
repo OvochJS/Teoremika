@@ -10,48 +10,57 @@ import { skipToken } from "@reduxjs/toolkit/query";
 
 import errorMd from "@/error.md?raw";
 import helloMd from "@/hello.md?raw";
+import { useEffect, useMemo } from "react";
 
 const errorData: MarkdownFile = {
   date: null,
   content: errorMd,
-  fileName: "Ошибка",
+  name: "Ошибка",
 };
 
 const helloData: MarkdownFile = {
   date: null,
   content: helloMd,
-  fileName: "Добро пожаловать",
+  name: "Добро пожаловать",
 };
 
 const loadData: MarkdownFile = {
   date: null,
   content: "",
-  fileName: "Загрузка...",
+  name: "Загрузка...",
 };
 
 const md = new MarkdownIt({ html: false });
 
 export function Book() {
-  const { title } = useParams();
+  const { id } = useParams();
   const dispatch = useAppDispatch();
+
   const {
     data = helloData,
     error,
     isLoading,
-  } = apiDocumentation.useGetMarkdownQuery(title ?? skipToken);
+  } = apiDocumentation.useGetMarkdownQuery(id ?? skipToken);
   let finalData;
 
   if (isLoading) {
     finalData = loadData;
   } else if (error) {
-    finalData = errorData;
-    if ("status" in error) {
-      finalData.fileName = `Код ошибки: ${error.status}`;
+    let content = errorData.content;
+    if (isNaN(Number(id))) {
+      content =
+        (id === "null"
+          ? "### У секции нету, Привязаного Markdown файла\n"
+          : "### Id не являеться числом\n") + content;
+    } else if ("status" in error) {
+      content = `### Код ошибки: ${error.status}\n` + content;
     }
+
+    finalData = { ...errorData, content };
   } else {
     finalData = data;
   }
-  const { date, content: markdown, fileName } = finalData;
+  const { date, content: markdown, name } = finalData;
 
   let formatedDate = "";
   if (date) {
@@ -60,20 +69,27 @@ export function Book() {
   }
 
   const text = md.render(markdown);
-  const regexp = /<h([1-6])>(.*?)<\/h\1>/g;
-  let i = 0;
-  const chapters: string[] = [];
 
-  const document = text.replace(regexp, (_, level, text: string) => {
-    chapters.push(text);
-    return `<h${level} id="chapter-${i++}">${text}</h${level}>`;
-  });
+  const { chapters, document } = useMemo(() => {
+    const regexp = /<h([1-6])>(.*?)<\/h\1>/g;
+    let i = 0;
+    const collected: string[] = [];
 
-  dispatch(setChapters(chapters));
+    const document = text.replace(regexp, (_, level, txt: string) => {
+      collected.push(txt);
+      return `<h${level} id="chapter-${i++}">${txt}</h${level}>`;
+    });
+
+    return { chapters: collected, document };
+  }, [text]);
+
+  useEffect(() => {
+    dispatch(setChapters(chapters));
+  }, [dispatch, chapters]);
 
   return (
-    <div className="w-[100%] bg-neutral-900 p-6 sm:w-[80%] sm:flex-8 lg:w-[65%] 2xl:max-w-7xl">
-      <h1 className="mb-6 text-5xl font-extrabold">{fileName}</h1>
+    <div className="min-h-200 sm:flex-8 w-[100%] bg-neutral-900 p-6 sm:w-[80%] lg:w-[65%] 2xl:max-w-7xl">
+      <h1 className="mb-6 text-5xl font-extrabold">{name}</h1>
       <div
         dangerouslySetInnerHTML={{ __html: document }}
         className="markdown wrap-break-word"

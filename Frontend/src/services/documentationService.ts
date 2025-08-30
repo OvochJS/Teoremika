@@ -1,14 +1,15 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export interface MarkdownFile {
-  fileName: string;
+  name: string;
   content: string;
-  date: number | null;
+  date: string | null;
 }
 
 export interface Section {
   id: number;
   title: string;
+  idMarkdownFile: number | null;
   children: Section[];
 }
 
@@ -20,7 +21,15 @@ export const apiDocumentation = createApi({
       query: (fileName: string) => `/md/${fileName}`,
     }),
     getSections: builder.query<Section[], string>({
-      query: () => '/sections',
+      query: () => "/sections",
+    }),
+    searchSection: builder.query<Section[], string>({
+      query: (keyword: string) => ({
+        url: "/search",
+        params: {
+          keyword: keyword,
+        },
+      }),
     }),
   }),
 });
