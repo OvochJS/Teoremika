@@ -5,6 +5,25 @@
   --font-roboto: "Roboto", sans-serif;
 }
 
+@layer components {
+  .form-label {
+    @apply mb-2 block cursor-pointer text-sm font-medium;
+  }
+  .form-input {
+    @apply block w-full rounded-md bg-neutral-800 px-2 py-1 outline outline-neutral-700 focus-visible:outline-2 focus-visible:outline-neutral-500;
+    transition: outline-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .form-button {
+    @apply w-full rounded-md bg-blue-950 py-1 text-neutral-400 outline outline-blue-900 hover:bg-blue-800 hover:text-white hover:outline-2 hover:outline-blue-700;
+    transition:
+      outline-color,
+      background-color 250ms linear;
+  }
+  .auth-mode-form {
+    @apply w-[50%] text-base py-1
+  }
+}
+
 .button-icon {
   background: none;
   border: none;
