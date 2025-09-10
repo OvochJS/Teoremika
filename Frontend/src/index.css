@@ -10,17 +10,27 @@
     @apply mb-2 block cursor-pointer text-sm font-medium;
   }
   .form-input {
-    @apply block w-full rounded-md bg-neutral-800 px-2 py-1 outline outline-neutral-700 focus-visible:outline-2 focus-visible:outline-neutral-500;
+    @apply block w-full rounded-md bg-neutral-800 px-2 py-1 outline outline-neutral-700 focus-visible:outline-2 focus-visible:outline-neutral-500 aria-[invalid="true"]:outline-red-800;
     transition: outline-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .form-button {
-    @apply w-full rounded-md bg-blue-950 py-1 text-neutral-400 outline outline-blue-900 hover:bg-blue-800 hover:text-white hover:outline-2 hover:outline-blue-700;
+    @apply w-full rounded-md text-neutral-400 outline hover:outline-2 hover:text-white;
+      transition:
+      outline-color,
+      background-color 250ms linear;
+  }
+
+  .form-button-login {
+    @apply bg-blue-950 py-1 outline-blue-900 hover:bg-blue-800 hover:outline-blue-700;
     transition:
       outline-color,
       background-color 250ms linear;
   }
+  .form-button-register {
+    @apply bg-green-950 py-1 outline-green-900 hover:bg-green-800 hover:outline-green-700;
+  } 
   .auth-mode-form {
-    @apply w-[50%] text-base py-1
+    @apply w-[50%] py-1 text-base;
   }
 }
 
