@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+
 
 interface ProblemsProps {
   title: string;
@@ -7,7 +7,7 @@ interface ProblemsProps {
   topics: string[];
 }
 
-export function Problems({ title, description, level, topics }: ProblemsProps) {
+export function ProblemsItem({ title, description, level, topics }: ProblemsProps) {
   let levelStyle;
   switch (level) {
     case 1:
@@ -32,7 +32,7 @@ export function Problems({ title, description, level, topics }: ProblemsProps) {
   }
 
   return (
-    <Link to="/1" className="block my-2 rounded-sm bg-neutral-800 p-4 transform transition-transform duration-200 hover:scale-102">
+    <div className="block my-2 rounded-sm bg-neutral-800 p-4">
       <h3 className="text-base font-bold">
         <span className={levelStyle + " mr-2 py-1 px-2 text-xs bg-black border rounded-2xl"}>{level + " ур"}</span>
         {title}
@@ -40,6 +40,6 @@ export function Problems({ title, description, level, topics }: ProblemsProps) {
 
       <p className="text-sm my-5">{description}</p>
       <div className="space-x-1">{...topics.map((topic, id) => <div className="bg-neutral-900 rounded-2xl inline-block py-1 px-2 text-xs text-neutral-500"  key={id}>{topic}</div>)}</div>
-    </Link>
+    </div>
   );
 }
