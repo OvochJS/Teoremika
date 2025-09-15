@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router";
 
 export function Documentation() {
   return (
-    <div className="flex w-[100%] justify-between bg-neutral-900 min-h-100">
+    <div className="flex w-[100%] justify-between bg-neutral-900 min-h-200">
       <Sidebar />
       <Routes>
         <Route path="/:title?/:id?" element={<Book />} />

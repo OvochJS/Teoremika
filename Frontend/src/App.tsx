@@ -4,6 +4,7 @@ import { Home } from "./pages/Home.tsx";
 import { Documentation } from "./pages/Documentation.tsx";
 import { Header } from "./components/Header.tsx";
 import { Footer } from "#/Footer.tsx";
+import { Problems } from "./pages/Problems.tsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="documentation/*" element={<Documentation />} />
+        <Route path="problems/" element={<Problems />} />
       </Routes>
       <Footer />
     </>
