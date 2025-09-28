@@ -18,8 +18,12 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
 @Table(name = "sections")
 public class Section {
     @Id
@@ -43,37 +47,4 @@ public class Section {
     @OneToMany(mappedBy = "parent")
     @JsonManagedReference
     private List<Section> children = new ArrayList<>();
-
-    public Section() {
-    }
-
-    public Section(String title, Section parent, MarkdownFile markdownFile) {
-        this.markdownFile = markdownFile;
-        this.parent = parent;
-        this.title = title;
-    }
-
-    public MarkdownFile getMarkdownFile() {
-        return markdownFile;
-    }
-
-    public Integer getIdMarkdownFile() {
-        return idMarkdownFile;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public List<Section> getChildren() {
-        return children;
-    }
-
-    public Section getParent() {
-        return parent;
-    }
 }

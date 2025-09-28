@@ -1,11 +1,11 @@
-import { Link } from "react-router";
 
-import avatar from "@/avatar.jpg";
 import { LoginMenu } from "./LoginMenu";
 import { useState } from "react";
+import { useAppSelector } from "$/hooks";
 
 export function Profile() {
   const [isOpen, setIsOpen] = useState(false);
+  const user = useAppSelector((state) => state.user.value)
 
   function handleClick() {
     const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -15,21 +15,23 @@ export function Profile() {
   }
 
   return (
-    <div>
-      <button
-        onClick={handleClick}
-        className="2xl:focus:outline-3 rounded-sm bg-stone-200 px-2 py-1 text-xs text-black outline-white hover:outline lg:px-4 lg:text-sm 2xl:px-8 2xl:text-2xl"
-      >
-        Войти
-      </button>
-      {isOpen && <LoginMenu onClick={handleClick}/>}
-      <Link to="/users" className="hidden">
-        <img
-          src={avatar}
-          alt="Профиль"
-          className="size-6 rounded-full lg:size-9 2xl:size-14"
-        />
-      </Link>
+<div>
+      {user ? (
+        <>
+          <h1 className="inline-block text-[8px] font-bold lg:text-sm 2xl:text-xl">{user.userName} {user.score}</h1>
+        </>
+      ) : (
+        <>
+          <button
+            onClick={handleClick}
+            className="2xl:focus:outline-3 rounded-sm bg-stone-200 px-2 py-1 text-xs text-black outline-white hover:outline lg:px-4 lg:text-sm 2xl:px-8 2xl:text-2xl"
+          >
+            Войти
+          </button>
+          {isOpen && <LoginMenu onClick={handleClick} />}
+        </>
+      )}
     </div>
+
   );
 }

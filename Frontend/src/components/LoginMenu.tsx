@@ -1,4 +1,6 @@
+import { useAppDispatch } from "$/hooks";
 import { apiUser } from "$/services/userEntityService";
+import { setUser } from "$/store/reducers/userSlice";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
@@ -40,6 +42,7 @@ type RegisterSchema = z.infer<typeof registerSchema>;
 
 export function LoginMenu({ onClick }: { onClick: () => void }) {
   const [registerUser, { error }] = apiUser.useRegisterMutation();
+  const dispatch = useAppDispatch();
 
   const [isLogin, setIsLogin] = useState(true);
   const loginForm = useForm<LoginSchema>({
@@ -57,8 +60,9 @@ export function LoginMenu({ onClick }: { onClick: () => void }) {
   const onRegisterSubmit: SubmitHandler<RegisterSchema> = (data) => {
     const { username, email, password } = data;
 
-    const user = registerUser({ username, email, password });
-    console.log(user);
+    void registerUser({ username, email, password });
+    onClick();
+    dispatch(setUser({userName: username, score: 0}));
 
     registerForm.reset();
   };

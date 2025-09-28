@@ -1,13 +1,6 @@
+import type { Problem } from "$/services/problemsService";
 
-
-interface ProblemsProps {
-  title: string;
-  description: string;
-  level: number;
-  topics: string[];
-}
-
-export function ProblemsItem({ title, description, level, topics }: ProblemsProps) {
+export function ProblemsItem({ title, description, level, topics }: Problem) {
   let levelStyle;
   switch (level) {
     case 1:
@@ -39,7 +32,7 @@ export function ProblemsItem({ title, description, level, topics }: ProblemsProp
       </h3>
 
       <p className="text-sm my-5">{description}</p>
-      <div className="space-x-1">{...topics.map((topic, id) => <div className="bg-neutral-900 rounded-2xl inline-block py-1 px-2 text-xs text-neutral-500"  key={id}>{topic}</div>)}</div>
+      <div className="space-x-1">{...topics.map((topic, id) => <div className="bg-neutral-900 rounded-2xl inline-block py-1 px-2 text-xs text-neutral-500"  key={id}>{topic.title}</div>)}</div>
     </div>
   );
 }
